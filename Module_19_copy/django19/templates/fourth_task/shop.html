@@ -1,0 +1,25 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}
+    <h1>Магазин</h1>
+{% endblock %}
+
+{% block menu %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+  <ul>
+    {% for good in goods %}
+        <li>
+            {{ good.title }} | {{ good.description }}. Цена: {{ good.cost }}₽
+            <button type="button">Купить</button>  <!-- Кнопка для покупки товара -->
+        </li>
+    {% empty %}
+        <li>Нет доступных товаров.</li>
+    {% endfor %}
+</ul>
+<a href='/'>На главную</a>
+
+{% endblock %}

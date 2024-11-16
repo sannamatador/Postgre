@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ <style>
+         img {
+            max-width: 50%;
+            height: auto;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    {% block pagename %}
+
+    <h1> Главная страница </h1>
+    <h2> Товары для конного спорта </h2>
+    {% endblock %}
+
+
+    {% block menu %}
+
+        {% for adr, name in dictio.items %}
+        <p><a href="{% url adr %}">{{name}}</a></p>
+        {% endfor %}
+        <a href="{% url 'sign_up_by_django'%}">Регистрация </a>
+
+    {% endblock %}
+
+
+    {% block content %}
+
+        <!-- Контент страницы будет вставлен сюда -->
+
+    {% endblock %}
+
+
+
+</body>
+</html>

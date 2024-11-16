@@ -1,0 +1,24 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% load static %}
+
+{% block pagename %}
+    <h1>Корзина</h1>
+{% endblock %}
+
+{% block menu %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Извините, сайт находится в разработке</h2>
+    <h3>Ждем Вас на следующей неделе!</h3>
+    <form>
+        <input type="button" value="На главную" onclick="javascript:window.location='/'"/>
+
+    </form>
+
+    <img src="{% static 'Dymka.png' %}" alt="Дымка">
+
+{% endblock %}
